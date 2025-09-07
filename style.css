@@ -1,0 +1,281 @@
+body {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    color: #222;
+    min-height: 100vh;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Add this line to center vertically */
+}
+
+/* Center the container and its children */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    min-height: 60vh;
+}
+
+/* Make logIn and signIn look like cards */
+.logIn, .signIn {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 32px 40px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 24px;
+        min-height: unset;
+    }
+    .logIn, .signIn {
+        min-width: 90vw;
+        padding: 24px 8px;
+    }
+}
+
+/* ...existing code... */
+
+body {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    color: #222;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Merriweather', serif;
+    transition: background 0.5s;
+}
+
+/* Animated gradient background */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+body {
+    background: linear-gradient(120deg, #e0f7fa, #b2ebf2, #80deea, #26c6da);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease-in-out infinite;
+}
+
+/* Center the container and its children */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 48px;
+    width: 100%;
+    max-width: 900px;
+    min-height: 60vh;
+    z-index: 1;
+}
+
+/* Glassmorphism card effect */
+.logIn, .signIn {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+    padding: 40px 48px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(38, 198, 218, 0.13);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.logIn:hover, .signIn:hover {
+    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 16px 48px rgba(44, 62, 80, 0.22);
+}
+
+/* Decorative accent bar */
+.logIn::before, .signIn::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #26c6da, #00bcd4, #80deea);
+    border-radius: 22px 22px 0 0;
+    opacity: 0.7;
+}
+
+/* Headings */
+.logIn h1, .signIn h1 {
+    color: #0097a7;
+    margin-bottom: 28px;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(38,198,218,0.07);
+}
+
+/* Form styling */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    background: rgba(224, 247, 250, 0.7);
+    border: 1.5px solid #b2dfdb;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 1.08rem;
+    margin-bottom: 0;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(38,198,218,0.04);
+}
+input:focus {
+    border: 1.5px solid #26c6da;
+    box-shadow: 0 2px 12px rgba(38,198,218,0.13);
+}
+
+/* Buttons */
+button, .btn {
+    background: linear-gradient(90deg, #26c6da 0%, #00bcd4 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 14px 0;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+button:hover, .btn:hover {
+    background: linear-gradient(90deg, #00bcd4 0%, #26c6da 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(38,198,218,0.13);
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 24px;
+        min-height: unset;
+        max-width: 98vw;
+    }
+    .logIn, .signIn {
+        min-width: 90vw;
+        padding: 28px 8px;
+    }
+    .logIn h1, .signIn h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Subtle floating animation for cards */
+@media (min-width: 901px) {
+    .logIn, .signIn {
+        animation: floatCard 4s ease-in-out infinite alternate;
+    }
+    @keyframes floatCard {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-8px); }
+    }
+}
+
+/* ...existing code... */
+
+/* BottomBar styles */
+.BottomBar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background: rgba(38, 198, 218, 0.85);
+    box-shadow: 0 -4px 24px rgba(38,198,218,0.13);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    min-height: 64px;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+    border-radius: 18px 18px 0 0;
+    animation: bottomBarFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes bottomBarFadeIn {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Social links */
+.socials {
+    display: flex;
+    gap: 24px;
+}
+
+.social-link {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #00bcd4 0%, #26c6da 100%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    border: 1.5px solid rgba(255,255,255,0.18);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.social-link:hover {
+    background: linear-gradient(90deg, #26c6da 0%, #00bcd4 100%);
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 4px 16px rgba(38,198,218,0.18);
+    text-decoration: underline;
+}
+
+/* Responsive for BottomBar */
+@media (max-width: 700px) {
+    .BottomBar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 8px 8vw;
+        min-height: 80px;
+    }
+    .socials {
+        justify-content: center;
+        gap: 12px;
+    }
+    .scrollDown {
+        justify-content: center;
+        margin-bottom: 4px;
+    }
+}
+
+/* ...existing code...
