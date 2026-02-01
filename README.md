@@ -1,4 +1,4 @@
-# Sign-in-and-log-in-website
+# Sign in and log in website:
 This is a simple website that askes you to sign/log into the website
 #Notes
 It doesnt save you account or passwords
